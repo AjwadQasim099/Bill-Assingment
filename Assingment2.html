@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bill</h1>
+    <div id="div1">
+    <h2 id="head1">Product</h2>
+    <h2 id="head2"> Price</h2>
+    <h2 id="head3">Quantity</h2>
+    <h2 id="head4">Amount</h2>
+    </div>
+  <div id="div2"> 
+     <h3 class="Burger1">Beef Burger</h3>
+     <h3 class="Price1" id="price1">200</h3>
+     <input type="number" class="input1" id="Quantity1">
+     <p class="input2" id="Amount1"></p>
+     <h3 class="Burger1">Grill Burger</h3>
+     <h3 class="Price1" id="price2">250</h3>
+     <input type="number" class="input1" id="Quantity2">
+     <p class="input2" id="Amount2"></p>
+     <h3 class="Burger1">Zinger Burger</h3>
+     <h3 class="Price1" id="price3">300</h3>
+     <input type="number" class="input1" id="Quantity3">
+     <p class="input2" id="Amount3"></p>
+     <h3 class="Burger1">Crispy Burger</h3>
+     <h3 class="Price1" id="price4">350</h3>
+     <input type="number" class="input1" id="Quantity4">
+     <p class="input2" id="Amount4"></p>
+  <button onclick="T_Amount()" id="Tbtn">NEXT</button>
+   <p class="input2" id="para"></p>
+  </div>
+<style>
+  #price3,#price4{
+    margin-left: 180px;
+  }
+  button{
+    margin-left: 30px;
+    background-color: bisque;
+    border-radius: 9px;
+  }
+       h2{
+          display: inline-block;
+          color:darkslategrey;
+          font-size: 1.8rem; 
+      }
+      #head1,#head2,#head3{
+        margin-left: 200px;
+      }
+      #head4{
+        margin-left: 170px;
+      }
+      #div1{
+        border: 3px solid black;
+        border-radius: 2rem;
+        width:82rem;
+        background-color:azure;
+      }
+      h1{
+        margin-left: 35rem;
+        font-size: 4rem;
+        color:cadetblue
+      }
+      .Burger1,.Price1,.input1{
+        display: inline-block;
+      }
+      .input1{
+        margin-left: 180px;
+      }
+      .Burger1{
+        margin-left: 210px;
+        font-size: 25px;
+      }
+      .Price1{
+        margin-left: 190px;
+        font-size: 25px;
+      }
+      .input2{
+        display: inline-block;
+        margin-left: 100px;
+        font-size: 20px;
+      }
+      #Tbtn{
+        margin-left: 78.8rem;
+        width: 70px;
+      }
+      #para{
+        margin-left: 66rem;
+      }
+ </style>
+ <script>
+     function amount(price,id,txt)
+     {
+        var Quantity=parseInt(document.getElementById(id).value)
+        var amount=price*Quantity
+        document.getElementById(txt).textContent=("Your Amount is")+amount+(".")
+        return amount
+     }
+     function T_Amount()
+     {
+      let Total=amount(200,"Quantity1","Amount1")+amount(250,"Quantity2","Amount2")+amount(300,"Quantity3","Amount3")+amount(400,"Quantity4","Amount4")
+      debugger
+      document.getElementById("para").textContent=("Your Total Amount is")+Total+(".")
+     }
+</script>
+</body>
+</html>
